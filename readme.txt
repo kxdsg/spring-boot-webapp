@@ -1,4 +1,4 @@
-simple demo web project, it covers below techical topics£º
+simple demo web project, it covers below techical topics:
 
 1. spring boot + thymeleaf
 2. mybatis annotation
