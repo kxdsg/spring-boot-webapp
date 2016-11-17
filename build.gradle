@@ -38,6 +38,7 @@ dependencies {
 	compile('org.apache.httpcomponents:httpclient:4.5.2')
 	runtime('com.zaxxer:HikariCP:2.4.6')
 	runtime('net.sourceforge.nekohtml:nekohtml:1.9.22') //to support thymeleaf mode: LEGACYHTML5
+	compile('com.alibaba:fastjson:1.2.7')
 }
 
 
