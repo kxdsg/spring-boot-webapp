@@ -26,3 +26,8 @@ spring:
   thymeleaf:
     cache: false
     mode: LEGACYHTML5
+
+  #开启dev环境配置
+  profiles:
+    active: dev
+

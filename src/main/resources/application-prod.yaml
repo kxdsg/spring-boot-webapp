@@ -1,0 +1,3 @@
+--- #放置prod环境下的属性
+file:
+  path: /usr/local/nginx
