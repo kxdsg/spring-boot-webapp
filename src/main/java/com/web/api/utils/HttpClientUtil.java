@@ -1,8 +1,8 @@
 package com.web.api.utils;
 
 import com.google.gson.Gson;
-import com.web.api.common.Constants;
-import com.web.api.common.ServiceRumtimeException;
+import com.web.api.common.data.Constants;
+import com.web.api.common.data.ServiceRuntimeException;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.*;
@@ -99,7 +99,7 @@ public class HttpClientUtil {
             logger.info("返回报文 : " + result);
         } catch (IOException e) {
             logger.error("调用接口异常: " + e);
-            throw new ServiceRumtimeException(Constants.RTN_CODE_ERROR,Constants.RTN_MESSAGE_ERROR);
+            throw new ServiceRuntimeException(Constants.RTN_CODE_FAIL,Constants.RTN_MESSAGE_ERROR);
         } finally {
             if (response != null) {
                 try {

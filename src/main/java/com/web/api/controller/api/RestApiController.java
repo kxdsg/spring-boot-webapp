@@ -1,8 +1,8 @@
-package com.web.api.controller;
+package com.web.api.controller.api;
 
-import com.web.api.common.Constants;
-import com.web.api.common.RtnData;
-import com.web.api.common.ServiceRumtimeException;
+import com.web.api.common.data.Constants;
+import com.web.api.common.data.RtnData;
+import com.web.api.common.data.ServiceRuntimeException;
 import com.web.api.service.RestApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -27,11 +27,11 @@ public class RestApiController {
     @RequestMapping(value = "/mobile/location", method = RequestMethod.GET)
     public RtnData mobileLocation(@RequestParam(required = false) String phone) throws Exception {
         if(StringUtils.isEmpty(phone)){
-            throw new ServiceRumtimeException(Constants.MANDATORY_CODE_ERROR, Constants.MANDATORY_MESSAGE_ERROR);
+            throw new ServiceRuntimeException(Constants.MANDATORY_CODE_ERROR, Constants.MANDATORY_MESSAGE_ERROR);
         }
         Map<String,Object> params = new HashMap<String, Object>();
         params.put("phone",phone);
         Object result = restApiService.mobileLocation(params);
-        return new RtnData(result);
+        return RtnData.ok(result);
     }
 }

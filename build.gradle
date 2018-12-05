@@ -2,6 +2,8 @@ buildscript {
 	ext {
 		springBootVersion = '1.4.0.RELEASE'
 	}
+	//gradle脚本自身需要使用的资源。可以声明的资源包括依赖项、第三方插件、maven仓库地址等,
+	// gradle在执行脚本时会优先执行buildscript代码块中的内容，然后才会执行剩余的build脚本。
 	repositories {
 		mavenCentral()
 	}
@@ -21,7 +23,12 @@ jar {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+//项目上用到的依赖仓库
 repositories {
+	//优先使用阿里云repository
+	maven {
+		url 'http://maven.aliyun.com/nexus/content/groups/public/'
+	}
 	mavenCentral()
 }
 
@@ -39,6 +46,8 @@ dependencies {
 	runtime('com.zaxxer:HikariCP:2.4.6')
 	runtime('net.sourceforge.nekohtml:nekohtml:1.9.22') //to support thymeleaf mode: LEGACYHTML5
 	compile('com.alibaba:fastjson:1.2.7')
+	compile('com.google.zxing:core:3.3.2')
+	compile('com.google.zxing:javase:3.3.2')
 }
 
 
